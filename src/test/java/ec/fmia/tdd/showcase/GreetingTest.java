@@ -48,8 +48,15 @@ public class GreetingTest {
 		Assert.assertEquals("Hello, Mati, Vivi and FRED.", Greeting.greet(names));
 	}
 
+	// Allow mixing of normal and shouted names by separating the response into two greetings. For example, 
+	// when name is ["Amy", "BRIAN", "Charlotte"], then the method should return the string "Hello, Amy and Charlotte. AND HELLO BRIAN!"
+	@Test
 	public void methodAllowMixingOfNormalAndShoutedNamesBySeparatingTheResponseIntoTwoGreetings() {
-
+		String[] names = new String[3];
+		names[0] = "Amy";
+		names[1] = "BRIAN";
+		names[2] = "Charlotte";
+		Assert.assertEquals("Hello, Amy and Charlotte. AND HELLO BRIAN!", Greeting.greet(names));
 	}
 
 }
